@@ -69,6 +69,7 @@ public class PessoaDAO implements DAO {
             System.out.println("\n\tMENU PESSOA\n1 - Cadastrar pessoas\n2 - Remover pessoa");
             System.out.println("3 - Buscar pessoa\n4 - Adicionar produtividade");
             System.out.println("5 - Gerar Folha de pagamento\n6 - Voltar");
+            System.out.println("> ");
             switch(opcao = input.nextInt()){
                 case 1:
                     cadastrar();
@@ -106,21 +107,32 @@ public class PessoaDAO implements DAO {
             System.out.println("3 - Vendedor\n4 - Voltar");
             opcao = input.nextInt();
             if(opcao == 1){
-                System.out.println("\nInsira o nome, CPF e Código do cliente: ");
+               // System.out.println("\nInsira o nome, CPF e Código do cliente: ");
+                System.out.println("----------Cadastro----------");
+                System.out.print("Nome > ");
                 nome = input.next();
+                System.out.print("CPF > ");
                 cpf = input.next();
+                System.out.print("Matricula > ");
                 matricula = input.nextInt();
+                
                 if(verificaCpf(cpf)){
                     pessoas.add(new Cliente(nome, cpf, matricula));
                 }else{
                     System.out.println("CPF já cadastrado!\n");
                 }
+                System.out.println("---------------------------");
             }else if((opcao > 1 || opcao < 4) && opcao != 4){
-                System.out.println("Digite -> Nome, cpf, matricula, salario: ");
+                System.out.println("---------Cadastro---------");
+                System.out.print("Nome > ");
                 nome = input.next();
+                System.out.print("Cpf > ");
                 cpf = input.next();
+                System.out.println("Matricula > ");
                 matricula = input.nextInt();
-                salario = input.nextInt();                
+                System.out.print("Salario > ");
+                salario = input.nextInt();     
+                System.out.println("--------------------------");
             }
             switch(opcao){
                 case 1:                                        

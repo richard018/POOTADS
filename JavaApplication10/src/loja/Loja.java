@@ -19,6 +19,8 @@ public class Loja {
         int opcao;
         do{
             System.out.println("\n\tMenu Principal\n1 - Pessoa\n2 - Fornecedor\n3 - Sair");
+            
+            System.out.print("> ");
             switch(opcao = input.nextInt()){
                 case 1:
                     dao = PessoaDAO.getInstance();
